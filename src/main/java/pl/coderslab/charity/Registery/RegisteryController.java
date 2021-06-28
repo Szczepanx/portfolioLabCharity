@@ -1,5 +1,6 @@
 package pl.coderslab.charity.Registery;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,15 +24,16 @@ public class RegisteryController {
     }
 
     @PostMapping("/register")
-    public String registrationToEntity(@RequestParam String email,@RequestParam String password,@RequestParam String password2){
-        Users users = new Users(email,password);
+    public String registrationToEntity(@RequestParam String email,@RequestParam String password,@RequestParam String password2,
+                                       @RequestParam String name, @RequestParam String lastName){
+        Users users = new Users(name,lastName,email,BCrypt.hashpw(password,BCrypt.gensalt()));
         if (password.equals(password2)){
             usersRepository.save(users);
         }
         else{
             return "register";
         }
-        return "login";
+        return "redirect:/login";
     }
 
 

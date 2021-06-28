@@ -3,6 +3,7 @@ package pl.coderslab.charity.donation;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
+import pl.coderslab.charity.category.CategoryRepo;
 import pl.coderslab.charity.institution.Institution;
 
 import javax.persistence.*;
@@ -36,6 +37,7 @@ public class Donation {
 
     private String pickUpComment;
 
+
     public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment) {
         this.id = id;
         this.quantity = quantity;
@@ -51,7 +53,7 @@ public class Donation {
 
     public Donation(Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment) {
         this.quantity = quantity;
-        this.categories = categories;
+        this.categories= categories;
         this.institution = institution;
         this.street = street;
         this.city = city;

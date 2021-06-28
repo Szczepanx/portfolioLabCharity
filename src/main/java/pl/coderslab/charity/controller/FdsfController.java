@@ -15,6 +15,7 @@ import pl.coderslab.charity.institution.InstitutionRepo;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 @Controller
@@ -41,9 +42,13 @@ public class FdsfController {
         return "Zapisano";
     }
     @ModelAttribute("categories")
-    public List<Category> getSomeCat(){
+    public String[] getSomeCat(){
         List<Category> categoryList = categoryRepo.findAll();
-        return categoryList;
+        String[] aa= new String[5];
+        for (Category a:categoryList) {
+            aa[(int) (a.getId()-1)] = a.getName();
+        }
+        return aa;
     }
     @ModelAttribute("institutions")
     public List<Institution> getSomeIns(){

@@ -44,19 +44,19 @@ public class DonationController {
          return "form";
     }
 
-//    @PostMapping("/form")
-//    public String postCategories(@RequestParam("categories") String[] categories, @RequestParam("bags") Integer bags,
-//                                 @RequestParam("organization") String organization, @RequestParam("address") String address,
-//                                 @RequestParam("city") String city , @RequestParam("postcode") String postcode,
-//                                 @RequestParam("data") String data, @RequestParam("time") String time,
-//                                 @RequestParam("more_info") String more_info , Model model){
-//
-//        Donation donation = new Donation(bags,categories,organization,address,city,postcode,data,time,more_info);
-//        model.addAttribute("donation", donation);
-//        donationRepo.save(donation);
-//
-//        return "form-confirmation";
-//    }
+    @PostMapping("/form")
+    public String postCategories(@RequestParam("categories") String[] categories, @RequestParam("bags") Integer bags,
+                                 @RequestParam("organization") String organization, @RequestParam("address") String address,
+                                 @RequestParam("city") String city , @RequestParam("postcode") String postcode,
+                                 @RequestParam("data") String data, @RequestParam("time") String time,
+                                 @RequestParam("more_info") String more_info , Model model){
+
+        Donation donation = new Donation(bags,categories,organization,address,city,postcode,data,time,more_info);
+        model.addAttribute("donation", donation);
+        donationRepo.save(donation);
+
+        return "form-confirmation";
+    }
     
     public List<Category> getSomeCat(){
         List<Category> categoryList = categoryRepo.findAll();

@@ -11,11 +11,15 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+    private String lastname;
     @Email
     private String email;
     private String password;
 
-    public Users(String email, String password) {
+    public Users(String name, String lastname, String email, String password) {
+        this.name = name;
+        this.lastname = lastname;
         this.email = email;
         this.password = password;
     }
