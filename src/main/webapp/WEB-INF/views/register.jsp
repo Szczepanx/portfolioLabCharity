@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pl">
   <head>
@@ -9,6 +10,7 @@
   </head>
   <body>
     <header>
+
       <nav class="container container--70">
         <ul class="nav--actions">
           <li><a href="#">Zaloguj</a></li>
@@ -23,23 +25,24 @@
           <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
       </nav>
+        <%@include file="header.jsp" %>
     </header>
 
-    <section class="login-page">
+    <section class="login-page" >
       <h2>Załóż konto</h2>
-      <form>
+      <form method="post">
         <div class="form-group">
           <input type="email" name="email" placeholder="Email" />
         </div>
         <div class="form-group">
-          <input type="password" name="password" plac eholder="Hasło" />
+          <input type="password" name="password" placeholder="Hasło" />
         </div>
         <div class="form-group">
           <input type="password" name="password2" placeholder="Powtórz hasło" />
         </div>
 
         <div class="form-group form-group--buttons">
-          <a href="login.jsp" class="btn btn--without-border">Zaloguj się</a>
+          <a href="/login" class="btn btn--without-border">Zaloguj się</a>
           <button class="btn" type="submit">Załóż konto</button>
         </div>
       </form>
@@ -79,6 +82,7 @@
           /></a>
         </div>
       </div>
+        <%@include file="footer.jsp" %>
     </footer>
   </body>
 </html>

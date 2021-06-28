@@ -1,4 +1,6 @@
 package pl.coderslab.charity.Registery;
 
-public class UsersRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsersRepository extends JpaRepository<Users,Long> {
 }

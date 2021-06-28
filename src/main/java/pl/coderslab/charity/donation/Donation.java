@@ -19,8 +19,8 @@ public class Donation {
     private Long id;
     private Integer quantity;
     @ManyToMany
-    @CollectionTable
-    private String[] categories;
+
+    private List<Category> categories;
     @ManyToOne
     private Institution institution;
 
@@ -36,7 +36,7 @@ public class Donation {
 
     private String pickUpComment;
 
-    public Donation(Long id, Integer quantity, String[] categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment) {
+    public Donation(Long id, Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment) {
         this.id = id;
         this.quantity = quantity;
         this.categories = categories;
@@ -49,7 +49,7 @@ public class Donation {
         this.pickUpComment = pickUpComment;
     }
 
-    public Donation(Integer quantity, String[] categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment) {
+    public Donation(Integer quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, String pickUpDate, String pickUpTime, String pickUpComment) {
         this.quantity = quantity;
         this.categories = categories;
         this.institution = institution;

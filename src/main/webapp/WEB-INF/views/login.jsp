@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pl">
   <head>
@@ -23,6 +24,7 @@
           <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
       </nav>
+        <%@include file="header.jsp" %>
     </header>
 
     <section class="login-page">
@@ -69,6 +71,7 @@
             <a href="#" class="btn btn--small"><img src="images/icon-instagram.svg"/></a>
           </div>
         </div>
+        <%@include file="footer.jsp" %>
       </footer>
   </body>
 </html>
