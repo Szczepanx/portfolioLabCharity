@@ -1,6 +1,7 @@
 package pl.coderslab.charity.donation;
 
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.category.CategoryRepo;
@@ -20,7 +21,6 @@ public class Donation {
     private Long id;
     private Integer quantity;
     @ManyToMany
-
     private List<Category> categories;
     @ManyToOne
     private Institution institution;

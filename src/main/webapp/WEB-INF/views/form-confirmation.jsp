@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
-      <%@include file="header.jsp" %>
   </head>
   <body>
     <header class="header--form-page">
@@ -74,7 +73,6 @@
           /></a>
         </div>
       </div>
-        <%@include file="footer.jsp" %>
     </footer>
 
     <script src="js/app.js"></script>

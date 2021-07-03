@@ -26,8 +26,8 @@ public class RegisteryController {
     @PostMapping("/register")
     public String registrationToEntity(@RequestParam String email,@RequestParam String password,@RequestParam String password2,
                                        @RequestParam String name, @RequestParam String lastName){
-        Users users = new Users(name,lastName,email,BCrypt.hashpw(password,BCrypt.gensalt()));
         if (password.equals(password2)){
+            Users users = new Users(name,lastName,email,BCrypt.hashpw(password,BCrypt.gensalt()));
             usersRepository.save(users);
         }
         else{

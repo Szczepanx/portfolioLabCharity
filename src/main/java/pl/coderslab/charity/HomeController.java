@@ -3,6 +3,7 @@ package pl.coderslab.charity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.charity.donation.Donation;
 import pl.coderslab.charity.donation.DonationRepo;
 
 
@@ -21,4 +22,5 @@ public class HomeController {
         model.addAttribute("numberOfDonations",donationRepo.findMaxId());
         return "index";
     }
+
 }

@@ -32,6 +32,9 @@ public class Institution {
     public Institution() {
     }
 
+    public Institution(String organizationId) {
+    }
+
     public Long getId() {
         return id;
     }

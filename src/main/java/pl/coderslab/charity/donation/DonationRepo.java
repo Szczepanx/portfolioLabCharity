@@ -15,4 +15,9 @@ public interface DonationRepo extends JpaRepository<Donation,Long> {
 
     @Query("select max(e.id) from Donation e")
     String findMaxId();
+
+
+    Donation findFirstByIdOrderByIdDesc();
+
+
 }
